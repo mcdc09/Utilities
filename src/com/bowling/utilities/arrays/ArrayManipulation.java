@@ -10,6 +10,28 @@ import java.util.ArrayList;
  *
  */
 public class ArrayManipulation {
+	
+	/**
+	 * Returns a string of the toString methods for each
+	 * of the objects in the array
+	 * @param objects
+	 * @return
+	 */
+	public static String ArrayToString(Object[] objects) {
+		String out = "";
+		
+		for(int i = 0; i < objects.length; i++) {
+			out += i + " ";
+			Object o = objects[i];
+			if(o != null) {
+				out += o.toString();
+			} else {
+				out += "null";
+			}
+			out+= "\n";
+		} // close for
+		return out;
+	}
 
 	/**
 	 * Finds the minimum value from a 2D array
@@ -156,68 +178,6 @@ public class ArrayManipulation {
 		} // close null if
 		return out;
 	} // close function
-
-	/**
-	 * Writes an array to a comma-separated-variable (CSV) file to the directory of this application
-	 * @param array Array to be saved to the file
-	 * @param filename Name of the csv File
-	 */
-	public static void writeDoubleArrayToCSV(double[][] array, String filename) {
-		try {
-			if(!filename.endsWith(".csv")) {
-				filename = filename + ".csv";
-			}
-			if(array != null) {
-				FileWriter fw = new FileWriter(filename);
-				for(int i = 0; i < array.length; i++) {
-					String line = "";
-
-					for(int j = 0; j < array[i].length; j++) {
-						if(j != 0) line += ", ";
-						line += array[i][j];
-					} // close for j
-					line += "\n";
-					fw.write(line);
-				} // close for i
-
-				fw.close();
-			} // close if null
-		} catch (IOException e) {
-			System.err.println("There was a problem writing Array to CSV file");
-			e.printStackTrace();
-		} // close catch
-	} // close method
-
-	/**
-	 * Writes an array to a comma-separated-variable (CSV) file to the directory of this application
-	 * @param array Array to be saved to the file
-	 * @param filename Name of the csv File
-	 */
-	public static void writeIntArrayToCSV(int[][] array, String filename) {
-		try {
-			if(!filename.endsWith(".csv")) {
-				filename = filename + ".csv";
-			}
-			if(array != null) {
-				FileWriter fw = new FileWriter(filename);
-				for(int i = 0; i < array.length; i++) {
-					String line = "";
-
-					for(int j = 0; j < array[i].length; j++) {
-						if(j != 0) line += ", ";
-						line += array[i][j];
-					} // close for j
-					line += "\n";
-					fw.write(line);
-				} // close for i
-
-				fw.close();
-			} // close if null
-		} catch (IOException e) {
-			System.err.println("There was a problem writing Array to CSV file");
-			e.printStackTrace();
-		} // close catch
-	} // close method
 
 	/**
 	 * Converts a 2D array of booleans to a 2D array of doubles where

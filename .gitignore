@@ -1,6 +1,8 @@
 /bin
+bin
 .class
 
 # Eclipse crap
 .classpath
 .project
+*.class

@@ -40,7 +40,7 @@ public class CSVtoDB extends JFrame {
 		chooser.setCurrentDirectory(new File(System.getProperty("user.dir")));
 		chooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 		FileNameExtensionFilter filter = new FileNameExtensionFilter(
-				"CSV files", "csv");
+				"CSV files", "csv", "DB File", "db");
 		chooser.setFileFilter(filter);
 		int returnVal = chooser.showSaveDialog(this);
 		if(returnVal == JFileChooser.APPROVE_OPTION) {

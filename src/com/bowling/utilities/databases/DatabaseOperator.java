@@ -6,14 +6,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import com.bowling.utilities.system.FileHelper;
-
 public class DatabaseOperator {
 	private static Connection con;
 	private String dbPath;
 	
+	/**
+	 * Constructs a new DatabaseOperator object given the full file path
+	 * @param file
+	 */
 	public DatabaseOperator(String file) {
-		dbPath = FileHelper.getPathToResource(file);
+		dbPath = file;
 		
 		con = getNewConnection(dbPath);
 	}
@@ -102,10 +104,15 @@ public class DatabaseOperator {
 			}
 		} catch (Exception e) {
 			System.err.println("Exception: " + e.getMessage());
+			e.printStackTrace();
 		} finally {
 			
 		} // close finally
 		return conOut;
+	}
+	
+	public static Connection getConnection() {
+		return con;
 	}
 
 	protected char convertBool(boolean in) {

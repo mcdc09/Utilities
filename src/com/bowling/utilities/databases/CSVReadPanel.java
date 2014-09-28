@@ -18,6 +18,7 @@ public class CSVReadPanel extends JPanel {
 	 * Create the panel.
 	 */
 	public CSVReadPanel(File file) {
+		System.out.println(file);
 		
 		table = new JTable(createCSVTable());
 		add(table);

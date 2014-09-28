@@ -36,7 +36,6 @@ public abstract class CSVReader {
 						// use comma as separator
 						String[] lineSplit = line.split(csvSplitBy);
 
-						// TODO write specific formatting for this
 						if(lineCount == 0) {
 							// This is the header row
 							handleHeaderRow(lineSplit);
